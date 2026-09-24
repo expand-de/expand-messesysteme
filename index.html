@@ -108,11 +108,11 @@
 
   /* Hero: no extra inner max-widths, so it lines up with the
      full-width rows used by every section below it */
-  .hero{padding:52px 0 36px;}
-  .hero .logo{margin-bottom:28px;}
-  .hero .logo img{height:34px; width:auto;}
-  .hero h1{font-size:34px; margin-bottom:18px;}
-  .hero p.intro{font-size:17px; color:var(--text-muted); margin-bottom:24px;}
+  .hero{padding:36px 0 20px;}
+  .hero .logo{margin-bottom:20px;}
+  .hero .logo img{height:30px; width:auto;}
+  .hero h1{font-size:30px; margin-bottom:14px;}
+  .hero p.intro{font-size:16px; color:var(--text-muted); max-width:640px;}
   .contact-card{
     border:1px solid var(--panel-line);
     background:var(--panel);
@@ -122,7 +122,7 @@
   .contact-card p{font-size:15px; color:var(--text-muted);}
 
   /* Section eyebrow */
-  .section-eyebrow{padding:32px 0 4px; border-top:none;}
+  .section-eyebrow{padding:16px 0 4px; border-top:none;}
   .section-eyebrow .label{font-size:14px; margin-bottom:0;}
 
   /* Split blocks */
@@ -155,18 +155,34 @@
 
   /* Grid section */
   .grid-section{padding:40px 0;}
-  .grid-2{
+  .grid-3{
     display:grid;
-    grid-template-columns:repeat(2, minmax(0,1fr));
-    gap:28px;
+    grid-template-columns:repeat(3, minmax(0,1fr));
+    gap:24px;
   }
-  .grid-card{background:var(--panel); border:1px solid var(--panel-line); min-width:0;}
+  .grid-card{
+    background:var(--panel);
+    border:1px solid var(--panel-line);
+    border-top:2px solid var(--accent);
+    min-width:0;
+    transition:background .2s;
+  }
+  .grid-card:hover{background:rgba(255,255,255,0.08);}
   .grid-card .media-frame{border:none; border-bottom:1px solid var(--panel-line);}
   .grid-card .card-body{padding:22px;}
+  .grid-card .spec{
+    font-family:var(--label-font);
+    font-size:12px;
+    letter-spacing:0.04em;
+    color:var(--accent);
+    text-transform:uppercase;
+    display:block;
+    margin-bottom:10px;
+  }
   .grid-card h3{font-size:19px; margin-bottom:8px;}
   .grid-card p{font-size:14.5px; color:var(--text-muted); margin-bottom:14px;}
   @media (max-width:760px){
-    .grid-2{grid-template-columns:1fr;}
+    .grid-3{grid-template-columns:1fr;}
   }
 
   /* CTA */
@@ -193,12 +209,7 @@
     </div>
     <span class="label">Branding &amp; Event Solutions</span>
     <h1>Entdecken Sie unsere Messesysteme für Ihren nächsten Auftritt.</h1>
-    <p class="intro">Vielen Dank für Ihr Interesse an Expand International. Wir sind ein schwedischer Hersteller mobiler Messesysteme für den Innen- und Außenbereich, im Einsatz in über 60 Ländern. Werkzeugfrei, mit lebenslanger Garantie und schnellem Service. Unten finden Sie unsere Produkthighlights 2026.</p>
-    <div class="contact-card">
-      <span class="label">Ihr Ansprechpartner</span>
-      <p class="name">Christian Woitzat</p>
-      <p>Seit 14 Jahren bei Expand. Ihr direkter Ansprechpartner für Unternehmen und Veranstalter in der Region, wenn es um Ihren Messeauftritt geht.</p>
-    </div>
+    <p class="intro">Vielen Dank für Ihr Interesse an Expand International. Wir sind ein schwedischer Hersteller mobiler Messesysteme für den Innen- und Außenbereich, im Einsatz in über 60 Ländern. Werkzeugfrei, mit lebenslanger Garantie und schnellem Service.</p>
   </div>
 </header>
 
@@ -265,15 +276,15 @@
 <section class="grid-section">
   <div class="wrap">
     <span class="label">Weitere Systeme</span>
-    <div class="grid-2" style="margin-top:20px;">
+    <div class="grid-3" style="margin-top:20px;">
       <div class="grid-card">
         <div class="media-frame">
           <img src="https://expand-stands.b-cdn.net/First%20Touch%20E-Mail/expand_monitorstand_xl_a_tv-2-3.jpg" alt="Expand MonitorStand XL">
         </div>
         <div class="card-body">
-          <span class="label">Zubehör &amp; Technik</span>
+          <span class="spec">Bis 65″ Bildschirme</span>
           <h3>Expand MonitorStand XL</h3>
-          <p>Ein mobiler Monitorständer für Bildschirme bis 65 Zoll. Höhenverstellbar, stabil und mit der GrandFabric kombinierbar.</p>
+          <p>Ein mobiler Monitorständer, höhenverstellbar, stabil und mit der GrandFabric kombinierbar.</p>
           <a class="link-arrow" href="https://www.expandmedia.com/de/expand-monitorstand-xl">Details →</a>
         </div>
       </div>
@@ -282,9 +293,9 @@
           <img src="https://expand-stands.b-cdn.net/First%20Touch%20E-Mail/expand_linkwall_gerd_190919_084_4-3.jpg" alt="Expand LinkWall">
         </div>
         <div class="card-body">
-          <span class="label">Modularsystem</span>
+          <span class="spec">Beliebig erweiterbar</span>
           <h3>Expand LinkWall</h3>
-          <p>Ein flexibles Wandsystem: gerade, gebogen, als Raumteiler oder als kompletter Messestand. Beliebig erweiterbar, Grafikpanele jederzeit austauschbar.</p>
+          <p>Ein flexibles Wandsystem: gerade, gebogen, als Raumteiler oder als kompletter Messestand.</p>
           <a class="link-arrow" href="https://www.expandmedia.com/de/messestandsysteme/expand-linkwall-system">Details →</a>
         </div>
       </div>
@@ -293,12 +304,22 @@
           <img src="https://expand-stands.b-cdn.net/First%20Touch%20E-Mail/Expand-M2-Change-Graphics-Hand-4-3.jpg" alt="Expand M2 Roll-Up">
         </div>
         <div class="card-body">
-          <span class="label">Roll-Up Display</span>
+          <span class="spec">Meistverkauftes Roll-Up</span>
           <h3>Expand M2</h3>
-          <p>Unser meistverkauftes Roll-Up. Die Grafik lässt sich ohne neuen Ständer austauschen, die Höhe ist stufenlos verstellbar.</p>
+          <p>Die Grafik lässt sich ohne neuen Ständer austauschen, die Höhe ist stufenlos verstellbar.</p>
           <a class="link-arrow" href="https://www.expandmedia.com/de/roll-up-displays/expand-m2">Produkt ansehen →</a>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="split-block">
+  <div class="wrap">
+    <span class="label">Ihr Ansprechpartner</span>
+    <div class="contact-card" style="max-width:680px; margin-top:16px;">
+      <p class="name">Christian Woitzat</p>
+      <p>Seit 14 Jahren bei Expand habe ich zahlreiche Messeauftritte begleitet, von der ersten Beratung bis zum fertigen Stand. Beim Erstaufbau bin ich häufig selbst vor Ort, damit von Anfang an alles passt. Ihr direkter Ansprechpartner für Unternehmen und Veranstalter in der Region, mit dem Anspruch auf besten Service.</p>
     </div>
   </div>
 </section>
